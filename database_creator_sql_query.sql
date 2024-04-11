@@ -1,15 +1,24 @@
 CREATE TABLE name_table(
-	name_id serial not null,
-	name varchar(100),
+	name_id serial not null unique,
+	name varchar(100) unique,
 	primary key(name_id)
 );
 
+CREATE TABLE date_table(
+	dt date not null unique,
+	day varchar(20) not null,
+	month varchar(20) not null,
+	year int not null,
+	primary key(dt)
+);
+
 CREATE TABLE profile_table(
-	p_id serial not null,
+	p_id serial not null unique,
 	name_id int not null,
-	p_link varchar(150),
-	website varchar(150),
-	im varchar(150),
+	p_link varchar(200),
+	website varchar(200),
+	email varchar(200),
+	im varchar(200),
 	phone varchar(13),
 	birthday date,
 	connections varchar(25),
@@ -21,61 +30,53 @@ CREATE TABLE profile_table(
 );
 
 CREATE TABLE cert_table(
-	cert_sk serial not null,
+	cert_sk serial not null unique,
 	cert_org varchar(300),
 	cert_name varchar(300),
 	primary key(cert_sk)
 );
 
 CREATE TABLE skills_table(
-	skill_id serial not null,
-	skill_name varchar(200),
+	skill_id serial not null unique,
+	skill_name varchar(200) unique,
 	primary key(skill_id)
 );
 
 CREATE TABLE company_table(
-	company_id serial not null,
+	company_id serial not null unique,
 	company_name varchar(200),
 	primary key(company_id)
 );
 
 CREATE TABLE role_table(
-	role_id serial not null,
-	role_name varchar(200),
+	role_id serial not null unique,
+	role_name varchar(200) unique,
 	primary key(role_id)
 );
 
 CREATE TABLE college_table(
-	college_id serial not null,
-	college_name varchar(300),
+	college_id serial not null unique,
+	college_name varchar(300) unique,
 	primary key(college_id)
 );
 
 CREATE TABLE degree_table(
-	degree_id serial not null,
-	degree_name varchar(300),
+	degree_id serial not null unique,
+	degree_name varchar(300) unique,
 	primary key(degree_id)
 );
 
 CREATE TABLE lang_table(
-	lang_id serial not null,
-	language varchar(100),
+	lang_id serial not null unique,
+	language varchar(100) unique,
 	primary key(lang_id)
 );
 
 CREATE TABLE award_table(
-	award_sk serial not null,
+	award_sk serial not null unique,
 	award_org varchar(300),
 	award_name varchar(300),
 	primary key(award_sk)
-);
-
-CREATE TABLE date_table(
-	dt date not null,
-	day varchar(20) not null,
-	month varchar(20) not null,
-	year int not null,
-	primary key(dt)
 );
 
 
@@ -143,5 +144,5 @@ CREATE TABLE p_award_table(
 	foreign key (award_sk_fk) references award_table(award_sk)
 );
 
-
-
+-- DROP schema public cascade;
+-- create schema public;
