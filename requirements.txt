@@ -1,4 +1,4 @@
 selenium
 beautifulsoup4
 pandas
-psycopg2
+psycopg2-binary
