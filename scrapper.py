@@ -13,7 +13,7 @@ import logging
 
 # setting up logging
 logger = logging.getLogger(__name__)
-handler = logging.FileHandler('logs.log')
+handler = logging.FileHandler('logs/logs.log')
 formattor = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 handler.setFormatter(formattor)
 logger.addHandler(handler)
