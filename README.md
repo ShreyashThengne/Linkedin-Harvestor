@@ -6,3 +6,5 @@ Developed a LinkedIn profile scraper in Python using BeautifulSoup and Selenium.
 Implemented testing and validation procedures to ensure data integrity.
 Stored scraped data in PostgreSQL with a Snowflake schema.
 Extracted diverse profile information efficiently like experience, awards, skills, etc.
+
+Disclaimer: This is deprecated. It wont work now since linkedin keeps changing their html and css parts, so scarping wont work for long time as it demands weekly updates.
